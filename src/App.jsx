@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { EventCard } from "./Components/EventCard";
+
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import addWeeks from "date-fns/addWeeks";
 import TextField from "@mui/material/TextField";
@@ -9,6 +11,9 @@ import Data from "./holiday.json";
 import { cloneDeep } from "lodash";
 
 import "./App.css";
+function getWeeksAfter(date, amount) {
+  return date ? addWeeks(date, amount) : undefined;
+}
 
 function App() {
   const [value, setValue] = useState([null, null]);
